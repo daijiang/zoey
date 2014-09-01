@@ -1,17 +1,15 @@
 markdown: rdiscount
 permalink: /:year/:month/:day/:title/
 author: Zoey
+url: http://www.daijiang.name/zoey
 highlighter: pygments
-
-plugins: ./_plugins
-paginate: 8
-
-safe: false
 
 title: Zoey
 subTitle: A blog of my life.
 description: This blog is a diary of my life.
-url: http://www.daijiang.name/zoey
+
+paginate: 8
+safe: false
 feed: /atom.xml
 
 #菜单配置
@@ -58,7 +56,7 @@ follow:
   - class: fa-twitter
     url: http://twitter.com/_djli
   - class: fa-rss
-    url: http://www.daijiang.name/zoey
+    url: http://www.daijiang.name/zoey/feed.html
 
 
 #评论信息
