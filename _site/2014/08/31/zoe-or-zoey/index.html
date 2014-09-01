@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        
+            Zoe or Zoey
+                 
+    </title>
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="" />
+    <meta name="description" content="很早就决定给女儿取英文名了。最后觉得Zoey还不错。但是应该用哪一个拼写呢？" />
+    <meta name="keywords" content="" />
+    <!-- //页面样式 -->
+    <link rel="stylesheet" href="/themes/violet/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/themes/violet/css/highlight.css">
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.daijiang.name/zoey/feed/" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="/themes/violet/images/favicon.ico" type="image/x-icon" />
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  });
+
+  MathJax.Hub.Queue(function() {
+    // Fix <code> tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+</head>
+<body id="violet">
+    <div class="page-wrapper">
+        <section class="head" id="violet-head">
+            <header class="header" id="violet-header">
+                <h1 class="logo"><a href="http://www.daijiang.name/zoey">Zoey</a></h1>
+                <h2 class="subtitle">A blog of my life.</h2>
+            </header>
+            <nav class="nav" id="violet-nav">
+                <ul class="nav-list">
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/index.html">
+                            首页
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/archives.html">
+                            文章归档
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/categories.html">
+                            分类
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/tags.html">
+                            标签
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/about.html">
+                            关于
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/guestbook.html">
+                            留言
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/links.html">
+                            链接
+                        </a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li class="nav-item ">
+                        <a href="/feed.html">
+                            订阅
+                        </a>
+                        
+                    </li>
+                    
+                </ul>
+            </nav>
+        </section>
+        <section class="main" id="violet-main">
+            <article class="main-article main-article-page">
+    <div class="violet-title">
+        <h3 class="violet-title-item">Zoe or Zoey</h3>
+    </div>
+    <div class="violet-post">
+        <p class="main-article-meta"><time pubdate="">2014-08-31</time></p>
+        <div class="main-article-contant">
+            <p>很早就决定给女儿取英文名了。最后觉得Zoey还不错。但是应该用哪一个拼写呢？</p>
+
+<p>先看看这两个名字过去一百年的趋势吧！数据来源于美国社保局 (USA social security administration)。这个数据库包含了从1880年到2013年每年至少有5个人用了的所有名字及其应用次数。</p>
+
+<blockquote><p>For each year from 1880 to 2013, the number of children of each sex given each name. All names with more than 5 uses are given. (Source: http://www.ssa.gov/oact/babynames/limits.html)</p></blockquote>
+
+<p>兵马未动，代码先行。</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>babynames<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+data<span class="p">(</span><span class="kp">names</span><span class="p">)</span>
+babynames <span class="o">=</span> tbl_df<span class="p">(</span>babynames<span class="p">)</span>
+filter<span class="p">(</span>babynames<span class="p">,</span> name <span class="o">==</span> <span class="s">&quot;Zoe&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> zoe
+filter<span class="p">(</span>babynames<span class="p">,</span> name <span class="o">==</span> <span class="s">&quot;Zoey&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> zoey
+babynames <span class="o">%&gt;%</span>
+  filter<span class="p">(</span>name<span class="o">==</span><span class="s">&quot;Zoey&quot;</span> <span class="o">|</span> name <span class="o">==</span> <span class="s">&quot;Zoe&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  ggplot<span class="p">()</span><span class="o">+</span>geom_line<span class="p">(</span>aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span> y<span class="o">=</span>prop<span class="p">,</span> color <span class="o">=</span> name<span class="p">),</span> size <span class="o">=</span> <span class="m">2</span><span class="p">)</span><span class="o">+</span>facet_wrap<span class="p">(</span><span class="o">~</span>sex<span class="p">)</span></code></pre></div>
+
+
+<p><img src="http://i.imgur.com/V1I4sGX.png" alt="zoey" /></p>
+
+<p>Zoe这个名字从1880年就有人用了，而Zoey到了1970才每年有超过5个人用。这两个名字从1990年以后就都变得流行起来。而2000年以后，Zoey比Zoe更流行了。</p>
+
+<p>让我意外的是，居然也有男孩取名Zoe或Zoey！尽管数量很少。这也不难理解，毕竟每年出生人口这么多。</p>
+
+<p>看起来Zoey Li是个更好的名字，从趋势上来说。而且，Zoey Li比Zoe Li看起来更好看。因为前者占了三行（三线格）。</p>
+
+        </div>
+    </div>
+</article>
+<nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+        
+        
+    </div>
+</nav>
+<div class="comment">
+        <div class="comment-cnt">
+            <div id="disqus_thread"></div>
+        </div>
+</div>
+
+        </section>
+        <footer class="foot" id="violet-foot">
+            <div class="footer fn-clear">
+                <h1 class="logo">Zoey</h1>
+            </div>
+            <div class="copyright">
+                <div class="copyright-cnt fn-clear">
+                    
+                    <a class="follow" href="" target="_blank"><i class="fa fa-google-plus"></i></a>
+                    
+                    <a class="follow" href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                    
+                    <a class="follow" href="http://github.com/daijiang" target="_blank"><i class="fa fa-github"></i></a>
+                    
+                    <a class="follow" href="" target="_blank"><i class="fa fa-weibo"></i></a>
+                    
+                    <a class="follow" href="" target="_blank"><i class="fa fa-renren"></i></a>
+                    
+                    <a class="follow" href="http://twitter.com/_djli" target="_blank"><i class="fa fa-twitter"></i></a>
+                    
+                    <a class="follow" href="http://www.daijiang.name/zoey" target="_blank"><i class="fa fa-rss"></i></a>
+                    
+                    <p class="text">© 2014 Zoey Li. Theme design by <a href="http://www.zhanxin.info">zhanxin.lin</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/themes/violet/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="/themes/violet/js/jquery-scrollTo.js"></script>
+    <script type="text/javascript" src="/themes/violet/js/common.js"></script>
+    <script type="text/javascript">
+        var headImgArr = [];
+        
+            headImgArr.push("/themes/violet/images/hdbg01.jpg");
+        
+            headImgArr.push("/themes/violet/images/hdbg02.jpg");
+        
+            headImgArr.push("/themes/violet/images/hdbg03.jpg");
+        
+            headImgArr.push("/themes/violet/images/hdbg04.jpg");
+        
+        if(headImgArr.length <= 0) {
+            headImgArr = ["/themes/violet/images/hdbg03.jpg"];
+            var item = 0;
+        } else {
+            var item = Math.floor(Math.random() * (headImgArr.length));
+        }
+        $("#violet-head").css({
+            "background-image": "url(" + headImgArr[item] + ")"
+        });
+    </script>
+    
+         <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'zoeysblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        </script>
+
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-28785465-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
