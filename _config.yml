@@ -1,7 +1,7 @@
 markdown: rdiscount
 permalink: /:year/:month/:day/:title/
 author: Zoey
-url: http://www.daijiang.name/zoey
+url: http://www.daijiang.name/zoey/
 highlighter: pygments
 
 title: Zoey
@@ -17,7 +17,7 @@ nav:
   - text: 首页
     url: /index.html
   - text: 文章归档
-    url: /zoey/archives.html
+    url: /archives.html
   - text: 分类
     url: /categories.html
   - text: 标签
