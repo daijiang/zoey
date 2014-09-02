@@ -2,6 +2,7 @@
 title: tags
 layout: page
 ---
+## 标签
 
 <div id='tag_cloud'>
 {% for tag in site.tags %}

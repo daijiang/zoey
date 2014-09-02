@@ -30,6 +30,15 @@ babynames %>%
 
 ![zoey](http://i.imgur.com/V1I4sGX.png)
 
+{% highlight r%}
+babynames %>%
+  filter(name=="Zoey" | name == "Zoe" | name == "Olivia" | name == "Elisha" 
+         | name == "Linsey" | name == "Lindsey" | name == "Ella") %>%
+  ggplot()+geom_line(aes(x=year, y=n, color = name, linetype = name), size = 2)+facet_wrap(~sex)
+{% endhighlight %}
+
+![other](http://i.imgur.com/qt8618s.png)
+
 Zoe这个名字从1880年就有人用了，而Zoey到了1970才每年有超过5个人用。这两个名字从1990年以后就都变得流行起来。而2000年以后，Zoey比Zoe更流行了。
 
 让我意外的是，居然也有男孩取名Zoe或Zoey！尽管数量很少。这也不难理解，毕竟每年出生人口这么多。

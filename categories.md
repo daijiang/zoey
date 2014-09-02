@@ -2,6 +2,7 @@
 title: Categories
 layout: page
 ---
+## 分类
 
 <div id='tag_cloud'>
 {% for cat in site.categories %}
