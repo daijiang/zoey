@@ -1,0 +1,6 @@
+Changes have made:
+
+- `_config.yml`: I do not know why but I need to put /zoey/ before html file names in `nav` chunk. After doing this, the background color of active webpage in the nav list will not change...
+- `_layout/default.html`: I referred CSS files to `themes/violet/css`. On github pages, it will look for this folder in the top, which is `daijiang.github.io`. Thus I added these folders at there.
+	- Also, added Google analytic code.
+- `index.html`: I changed `{{ rpost.url}}` to `/zoey{{ rpost.url }}`. I do not know why...since I already setted `site.url`. 
