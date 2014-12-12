@@ -1,4 +1,4 @@
-markdown: rdiscount
+markdown: redcarpet
 permalink: /:year/:month/:day/:title/
 author: Zoey
 url: http://www.daijiang.name/zoey
