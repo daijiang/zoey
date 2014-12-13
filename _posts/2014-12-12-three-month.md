@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  三个月就好了
-categories: [日记]
 description:突然睡觉就好很多了～～
-tags: [记录, 生活]
+categories: [日记]
+tags: [记录]
 ---
 
 - 出生--一个月：睡觉不好，要抱着睡才能稍微睡的久点。
