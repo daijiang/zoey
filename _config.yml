@@ -2,7 +2,7 @@ markdown: kramdown
 permalink: /:year/:month/:day/:title/
 author: Zoey
 url: http://www.daijiang.name/zoey
-highlighter: pygments
+highlighter: rouge
 
 title: Zoey
 subTitle: A blog of my life.
